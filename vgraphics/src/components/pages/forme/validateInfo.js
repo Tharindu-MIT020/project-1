@@ -1,13 +1,21 @@
+import axios from 'axios';
+
 export default function validateInfo(values) {
     let errors = {};
   
 
+    // axios.get("http://localhost:8080/form/")
+    // .then(response => {
+    //   if(response.data.length > 0){
+    //     response.data
+    //   }
+   
 
     if (!values.username.trim()) {
       errors.username = 'Username required';
     }
 
-    if (!values.name) {
+    if (!values.name ) {
       errors.name = 'Name required';
     }
     // else if (!/^[A-Za-z]+/.test(values.name.trim())) {
@@ -27,6 +35,9 @@ export default function validateInfo(values) {
       errors.email = 'Email required';
     } else if (!/\S+@\S+\.\S+/.test(values.email)) {
       errors.email = 'Email address is invalid';
+    }
+    else if (!values.email){
+
     }
     if (!values.password) {
       errors.password = 'Password is required';
