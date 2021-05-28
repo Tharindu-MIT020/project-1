@@ -24,9 +24,13 @@ code {
   background-size: cover;
   background-position: center;
   z-index: -1;
-
-
-    
+  
+}
+.banner2{
+  background-size: cover;
+  background-position: center;
+  color: slategray;
+  
 }
 .navbar{
   width: 100%;
@@ -91,6 +95,7 @@ span{
   bottom: 0;
   z-index: -1;
   transition: 0.5s;
+  
 }
 button:hover span{
   width: 100%;

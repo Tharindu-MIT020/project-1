@@ -20,13 +20,13 @@ connection.once('open', () => {
 
 const registerRouter =require('./routes/exercise');
 const usersRouter = require('./routes/users');
-const cdetailsRouter = require('./routes/cdetails');
 const formRouter = require('./routes/form');
+const priceRouter = require('./routes/prices');
 
 app.use('/exercise', registerRouter);
 app.use('/users', usersRouter);
-app.use('/cdetails', cdetailsRouter);
 app.use('/form', formRouter);
+app.use('/price', priceRouter);
 
 
 app.listen(port, () => {

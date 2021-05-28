@@ -11,10 +11,10 @@ export default class Navbar extends Component {
             <li><Link to="/">Home</Link></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Digital</a></li>
-            <li><a href="#">V-Card</a></li>
+            <li><Link to="/digital">Digital</Link></li>
+            <li><Link to="/vcard">V-Card</Link></li>
             <li><a href="#">Offset</a></li>
-            <li><a href="#">Price List</a></li>
+            <li><Link to="/prices">Price List</Link></li>
         </ul>
     </div>
       </nav>

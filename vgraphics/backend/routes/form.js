@@ -15,18 +15,18 @@ router.route('/').get((req, res) => {
     const email = req.body.email;
     const password = req.body.password;
 
-           let exist = await Form.findOne({ username: username })
+    let exist = await Form.findOne({ username: username })
    
 
 
   if (exist) {
   
-    return res.status(200).json({ warn: "There Exist an Event with  the Same username !" })
+    return res.status(200).json({ warn: "Username alredy used !" })
   }
   else {
      exist = await Form.findOne({ email: email })
     if(exist){
-      return res.status(200).json({ warn: "There Exist an Event with  the Same email !" })
+      return res.status(200).json({ warn: "email  alredy used !" })
     }
   }
 
