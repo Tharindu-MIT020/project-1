@@ -1,6 +1,7 @@
 import React from 'react'
 import product_card from "./data/product_data"
 import './main.css';
+import { Link } from 'react-router-dom';
 
 const MainContent = () => {
     console.log(product_card);
@@ -14,7 +15,7 @@ const MainContent = () => {
             <h2>{item.product_name}</h2>
             <p>{item.description}</p>
             <p className="price">{item.Price}</p>
-            <div className="btn">Add to cart</div>
+            <div className="btn"><Link to="/" > Add to cart </Link></div>
         </div>
 
         </div>
@@ -23,7 +24,7 @@ const MainContent = () => {
     return(
         <div className="container">
         <div className="main_content">
-            <h3 className="h3">Digital</h3>
+            <h3 className="h3">VCard</h3>
             {listItem}
         </div>
         </div>

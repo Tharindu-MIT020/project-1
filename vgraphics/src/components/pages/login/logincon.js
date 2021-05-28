@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
 import './login.css';
+import useLog from './useLog'
+import Validate from './validateInfo'
 
 import { Link } from 'react-router-dom';
 
-const Logincon = () => {
+const Logincon = ({submitLogin}) => {
+  const{handleChange,handleSubmit, values, errors} = useLog(
+    submitLogin,
+    Validate
+  )
  return (
     <div className='form-content-right'>
-      <form  className='form' noValidate>
+       <form onSubmit={handleSubmit} className='form' noValidate>
         <h1>
             Join V Graphics 
         </h1>
@@ -17,8 +23,11 @@ const Logincon = () => {
             type='text'
             name='username'
             placeholder='Enter your username'
+            value={values.username}
+            onChange={handleChange}
             
           />
+          {errors.username && <p>{errors.username}</p>}
          
         </div>
           <div className='form-inputs'>
@@ -28,8 +37,11 @@ const Logincon = () => {
             type='password'
             name='password'
             placeholder='Enter your password'
+            value={values.password}
+            onChange={handleChange}
             
           />
+               {errors.password && <p>{errors.password}</p>}
           
         </div>
          <button className='form-input-btn' type='submit'>
