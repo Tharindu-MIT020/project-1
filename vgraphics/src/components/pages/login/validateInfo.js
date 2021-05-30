@@ -1,5 +1,9 @@
 import axios from 'axios';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
+
+toast.configure()
 export default function validateInfo(values) {
     let errors = {};
   
@@ -9,13 +13,13 @@ export default function validateInfo(values) {
       errors.username = 'Username required';
     }
     else if(values.username != "tharindu"){
-       alert("Username invalide") 
+       toast("Username invalide") 
     }
 
     if (!values.password) {
       errors.password = 'Password is required';
     } else if (values.password=="12345678"){
-        alert("login success")
+        toast("login success")
     }
   
     

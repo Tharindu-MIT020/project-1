@@ -1,6 +1,9 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
+toast.configure()
 const useForm = (callback, validate) => {
   const [values, setValues] = useState({
     name:'',
@@ -22,6 +25,7 @@ const useForm = (callback, validate) => {
     });
   };
 
+ 
   const handleSubmit = e => {
     e.preventDefault();
  
@@ -52,7 +56,16 @@ const useForm = (callback, validate) => {
       console.log(res.data)
       
       if(res.data.warn){
-        alert (res.data.warn)
+        toast (res.data.warn,
+          {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
       }
       
     
