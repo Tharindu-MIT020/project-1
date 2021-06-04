@@ -13,6 +13,7 @@ function Home(){
     return(
    
     <div className="banner">
+        
         <div style = {{paddingTop: "22%"}}>
         <div >
         <Link to="/register"> <button className="home-input-btn">Register</button></Link>

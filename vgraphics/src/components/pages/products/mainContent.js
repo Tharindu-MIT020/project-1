@@ -16,6 +16,8 @@ const MainContent = () => {
             <p>{item.description}</p>
             <p className="price">{item.Price}</p>
             <div className="btn"><Link to="/" > Add to cart </Link></div>
+            <br></br>
+            <div className="btn"><Link to="/view" > View </Link></div>
         </div>
 
         </div>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import "./navbar.css";
 
 export default class Navbar extends Component {
 
@@ -15,6 +16,16 @@ export default class Navbar extends Component {
             <li><Link to="/vcard">V-Card</Link></li>
             <li><a href="#">Offset</a></li>
             <li><Link to="/prices">Price List</Link></li>
+        </ul>
+              <ul className="navbar__links">
+        <li>
+          <Link to="/cart" className="cart__link">
+            {/* <i className="fas fa-shopping-cart"></i> */}
+            <span>
+              Cart <span className="cartlogo__badge">10</span>
+            </span>
+          </Link>
+        </li>
         </ul>
     </div>
       </nav>
