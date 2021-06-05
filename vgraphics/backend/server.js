@@ -22,11 +22,13 @@ const registerRouter =require('./routes/exercise');
 const usersRouter = require('./routes/users');
 const formRouter = require('./routes/form');
 const priceRouter = require('./routes/prices');
+const DigitalRouter = require('./routes/digital');
 
 app.use('/exercise', registerRouter);
 app.use('/users', usersRouter);
 app.use('/form', formRouter);
 app.use('/price', priceRouter);
+app.use('/digital', DigitalRouter);
 
 
 app.listen(port, () => {
