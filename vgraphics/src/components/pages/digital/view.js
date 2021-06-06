@@ -24,6 +24,10 @@ const ProductScreen = ({ match, history }) => {
     dispatch(addToCart(product._id, qty));
     history.push(`/cart`);
   };
+    const getCartSubTotal = () => {
+    
+      
+  };
   
   
   return (
