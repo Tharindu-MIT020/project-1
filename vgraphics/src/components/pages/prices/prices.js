@@ -4,20 +4,40 @@ import axios from 'axios';
 import { BrowserRouter as Router, Route} from "react-router-dom";
 
 
-const Prices = props => (
+const Prices = (props) => (
+
+  
   <tr>
-    <td>{props.prices.material}</td>
-    <td>{props.prices.size}</td>
-    <td>{props.prices.quality}</td>
-    <td>{props.prices.price}</td>
+    <td>{props.price.material}</td>
+    <td>{props.price.size}</td>
+    <td>{props.price.quality}</td>
+    <td>{props.price.price}</td>
     </tr>
 )
 
   export default class PricesList extends Component {
+
+
+
+   
+    constructor(props){
+      super(props);
+      this.state={
+
+        material:'',
+        size:'',
+        quality:'',
+        prices:[]
+
+
+      };
+    }
   
   componentDidMount() {
-    axios.get('http://localhost:8080/prices/')
+    axios.get('http://localhost:8080/price/')
       .then(response => {
+
+        console.log(response.data);
         this.setState({ prices: response.data })
       })
       .catch((error) => {
@@ -27,7 +47,16 @@ const Prices = props => (
 
   
   pricesList() {
-  this.state.prices.map(Prices)
+
+    return this.state.prices.map((price) => {
+      return (
+        <Prices
+          price={price}
+          // deleteCompany={this.deleteCompany}
+          key={price._id}
+        />
+      );
+    });
     
   }
 
@@ -45,10 +74,11 @@ const Prices = props => (
               </tr>
           </thead>
           <tbody>
-            { this.pricesList }
+            { this.pricesList() }
           </tbody>
         </table>
       </div>
     )
   }
 }
+

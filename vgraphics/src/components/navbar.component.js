@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import "./navbar.css";
+import { useSelector } from "react-redux";
+
+
 
 export default class Navbar extends Component {
 
@@ -22,7 +25,8 @@ export default class Navbar extends Component {
           <Link to="/cart" className="cart__link">
             {/* <i className="fas fa-shopping-cart"></i> */}
             <span>
-              Cart <span className="cartlogo__badge">10</span>
+              Cart 
+              
             </span>
           </Link>
         </li>

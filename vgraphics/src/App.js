@@ -10,7 +10,9 @@ import Login from "./components/pages/login/login";
 import Prices from "./components/pages/prices/prices";
 import Vcard from "./components/pages/products/mainContent";
 import Cartview from "./components/pages/cart/cartview";
-import { FooterContainer } from './components/pages/footer/containers/footer'
+import { FooterContainer } from './components/pages/footer/containers/footer';
+import Digital from "./components/pages/digital/digitalland"
+import View from "./components/pages/digital/view"
 
 
 
@@ -25,6 +27,8 @@ function App() {
           <Route path="/prices" component={Prices} />
           <Route path="/cart" component={Cartview} />
           <Route path="/vcard" component={Vcard} />
+          <Route path="/digital/:id" component={View} />
+          <Route path="/digital" component={Digital} />
           <Route path="/" component = {Home} />
           </Switch>
      <FooterContainer />    
