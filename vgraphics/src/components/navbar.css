@@ -1,11 +1,12 @@
 .navbar {
   width: 100%;
-  /* background-color: #171717; */
+  
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 5rem;
   z-index: 50;
+  margin-top: 0px;
 }
 
 .navbar__logo h2 {
@@ -39,16 +40,12 @@
 }
 
 .cart__link {
-  /* background: rgb(158, 56, 56); */
+ 
   padding: 20px;
   width: 30px;
   border-radius: 5px;
 }
 
-/* .cart__link:hover {
-  background: #dd219e;
-  color: #f4f4f4;
-} */
 
 .cartlogo__badge {
   width: 25px;
@@ -83,6 +80,10 @@
   height: 3px;
   background: #f4f4f4;
 }
+.navimg{
+  width: 150px;
+}
+
 
 @media (max-width: 960px) {
   .navbar__links {

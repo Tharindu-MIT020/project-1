@@ -13,6 +13,8 @@ const CartItem = ({ item, qtyChangeHandler, removeHandler }) => {
         <p>{item.name}</p>
       </Link>
             <p className="cartitem__price">${item.price}</p>
+            <p>Discription - {item.dis}</p>
+            <p>File - {item.fil} </p>
       <select
         value={item.qty}
         onChange={(e) => qtyChangeHandler(item.product, e.target.value)}

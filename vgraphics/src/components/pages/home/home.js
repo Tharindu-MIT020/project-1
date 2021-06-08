@@ -11,7 +11,8 @@ import { Link } from 'react-router-dom';
 
 function Home(){
     return(
-   
+
+   <div>
     <div className="banner">
         
         <div style = {{paddingTop: "22%"}}>
@@ -20,7 +21,13 @@ function Home(){
         <Link to="/login"><button className="home-input-btn2">login</button></Link>
         </div>
         </div>
-        </div>
+    </div>
+    <div className="home_bt">
+
+    </div>
+    </div>
+        
+        
 
     );
 }

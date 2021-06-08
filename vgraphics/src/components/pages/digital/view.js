@@ -9,6 +9,8 @@ import { addToCart } from "../../../redux/actions/cartAction";
 
 const ProductScreen = ({ match, history }) => {
     const [qty, setQty] = useState(1);
+    const [fil, setfil] = useState();
+    const [dis, setdis] = useState();
   const dispatch = useDispatch();
 
   const productDetails = useSelector((state) => state.getProductDetails);
@@ -21,13 +23,10 @@ const ProductScreen = ({ match, history }) => {
   }, [dispatch, match, product]);
 
   const addToCartHandler = () => {
-    dispatch(addToCart(product._id, qty));
+    dispatch(addToCart(product._id, qty, fil, dis));
     history.push(`/cart`);
   };
-    const getCartSubTotal = () => {
     
-      
-  };
   
   
   return (
@@ -56,7 +55,12 @@ const ProductScreen = ({ match, history }) => {
               </p>
               <p>
                 Description:
-                <input type="text">
+                <input type="text" value={dis} onChange={(e) => setdis(e.target.value)}>
+                </input>
+              </p>
+              <p>
+                File:
+                <input type="file" value={fil} onChange={(e) => setfil(e.target.value)} >
                 </input>
               </p>
               <p>
