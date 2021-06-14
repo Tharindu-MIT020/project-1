@@ -13,6 +13,8 @@ import Cartview from "./components/pages/cart/cartview";
 import { FooterContainer } from './components/pages/footer/containers/footer';
 import Digital from "./components/pages/digital/digitalland"
 import View from "./components/pages/digital/view"
+import Cdesign from "./components/pages/Cdesign/Cdesign"
+
 
 
 
@@ -29,6 +31,7 @@ function App() {
           <Route path="/vcard" component={Vcard} />
           <Route path="/digital/:id" component={View} />
           <Route path="/digital" component={Digital} />
+          <Route path="/cdesign" component={Cdesign} />
           <Route path="/" component = {Home} />
           </Switch>
      <FooterContainer />    

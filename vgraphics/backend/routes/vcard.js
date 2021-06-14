@@ -1,10 +1,10 @@
 const router = require('express').Router();
-let Digital = require('../models/digital.models');
+let Vcard = require('../models/vcard.modle');
 
 
 router.route('/').get((req, res) => {
-    Digital.find()
-      .then(digital => res.json(digital))
+    Vcard.find()
+      .then(vcard => res.json(vcard))
       .catch(err => res.status(400).json('Error: ' + err));
   });
 
@@ -15,22 +15,22 @@ router.route('/').get((req, res) => {
     const Imguri = req.body.Imguri;
     
 
-    const newDigital = new Digital({
+    const newVcard = new Vcard({
       Productcode,
       Description,
       Price,
       Imguri,
     });
   
-    newDigital.save()
+    newVcard.save()
     .then(() => res.json('form added!'))
     .catch(err => res.status(400).json('Error: ' + err));
   });
 
 
   router.route('/:id').get((req, res) => {
-  Digital.findById(req.params.id)
-    .then(digital => res.json(digital))
+  Vcard.findById(req.params.id)
+    .then(vcard => res.json(vcard))
     .catch(err => res.status(400).json('Error: ' + err));
 });
   

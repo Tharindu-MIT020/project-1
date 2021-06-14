@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const DigitalSchema = new Schema({
+const VcardSchema = new Schema({
 
     Productcode:{
         type: String,
@@ -32,6 +32,6 @@ const DigitalSchema = new Schema({
 {timestamps: true,}
 );
 
-const Digital = mongoose.model('Digital', DigitalSchema);
+const Vcard = mongoose.model('Vcard', VcardSchema);
 
-module.exports = Digital;
+module.exports = Vcard;

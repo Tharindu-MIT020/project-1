@@ -21,6 +21,7 @@ export default function validateInfo(values) {
       errors.password = 'Password is required';
     } else if (values.password=="12345678"){
         toast("login success")
+        
         }
         else{
           toast("Password invalide")

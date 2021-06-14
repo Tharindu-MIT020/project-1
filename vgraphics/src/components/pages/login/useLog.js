@@ -59,7 +59,7 @@ const useLog = (callback, validate) => {
   useEffect(
     () => {
       if (Object.keys(errors).length === 0 && isSubmitting) {
-       <Link to="/"></Link>
+      callback();
       }
     },
     [errors]

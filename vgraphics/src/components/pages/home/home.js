@@ -23,6 +23,35 @@ function Home(){
         </div>
     </div>
     <div className="home_bt">
+        <Link to="/digital">
+        <div className="point">
+            <img className="image_size" src="img/Mesa de trabajo 1.png"></img>
+            <label className="lab">Digital</label>
+        </div>
+        </Link>
+
+        <Link to="/vcard">
+        <div className="point">
+            <img className="image_size" src="img/Artboard 1.png"></img>
+            <label className="lab">V-Card</label>
+        </div>
+        </Link>
+
+        <Link to="/offset">
+        <div className="point">
+            <img className="image_size" src="img/Artboard 2.png"></img>
+            <label className="lab">Offset</label>
+        </div>
+        </Link>
+
+        <Link to="/yourdesign">
+        <div className="point">
+            <img className="image_size" src="img/digital.png"></img>
+            <label className="lab">Your Design</label>
+        </div>
+        </Link>
+       
+        
 
     </div>
     </div>

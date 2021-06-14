@@ -18,17 +18,19 @@ connection.once('open', () => {
   console.log("MongoDB database connection established successfully");
 })
 
-const registerRouter =require('./routes/exercise');
-const usersRouter = require('./routes/users');
+
 const formRouter = require('./routes/form');
 const priceRouter = require('./routes/prices');
 const DigitalRouter = require('./routes/digital');
+const VcardRouter = require('./routes/vcard');
+const OffsetRouter = require('./routes/offset');
 
-app.use('/exercise', registerRouter);
-app.use('/users', usersRouter);
+
 app.use('/form', formRouter);
 app.use('/price', priceRouter);
 app.use('/digital', DigitalRouter);
+app.use('/vcard', VcardRouter);
+app.use('/offset', OffsetRouter);
 
 
 app.listen(port, () => {

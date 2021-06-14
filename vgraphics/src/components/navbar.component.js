@@ -27,8 +27,7 @@ export default class Navbar extends Component {
             {/* <i className="fas fa-shopping-cart"></i> */}
             <span>
               Cart 
-              
-            </span>
+             </span>
           </Link>
         </li>
         </ul>

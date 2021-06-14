@@ -7,68 +7,6 @@ import { Link } from 'react-router-dom';
 import { Component } from 'react';
 
 
-// export default class FormSignup extends Component{
-
-//   constructor(props){
-//     super(props);
-
-//   this.onChangeName = this.onChangeName.bind(this);
-//   this.onChangeAddress = this.onChangeAddress.bind(this);
-//   this.onChangeTelephone = this.onChangeTelephone.bind(this);
-//   this.onChangeUsername = this.onChangeUsername.bind(this);
-//   this.onChangeEmail = this.onChangeEmail.bind(this);
-//   this.onChangePassword = this.onChangePassword.bind(this);
-
-
-
-
-//   this.state ={
-
-//     name:'',
-//     address:'',
-//     tel:0,
-//     username:'',
-//     email:'',
-//     password:''
-//   }
-// }
-
-//   onChangeName(e){
-//     this.setState({
-//       name: e.target.value
-//     });
-//   }
-
-//   onChangeAddress(e){
-//     this.setState({
-//       address: e.target.value
-//     });
-//   }
-
-//   onChangeTelephone(e){
-//     this.setState({
-//       tel: e.target.value
-//     });
-//   }
-
-//   onChangeUsername(e){
-//     this.setState({
-//       username: e.target.value
-//     });
-//   }
-
-//   onChangeEmail(e){
-//     this.setState({
-//       email: e.target.value
-//     });
-//   }
-
-//   onChangePassword(e){
-//     this.setState({
-//       password: e.target.value
-//     });
-//   }
-// }
 
 const FormSignup = ({ submitForm }) => {
   const { handleChange, handleSubmit, values, errors } = useForm(

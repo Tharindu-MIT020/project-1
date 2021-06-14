@@ -1,0 +1,44 @@
+.size{
+    
+/* display: flex; */
+    margin: 100px auto;
+    /* justify-content: center; */
+    /* align-items: center;  */
+    /* position: relative;  */
+    width: 1000px;
+    height: 100%;
+    /* margin: 30px auto;
+    padding: 20px 50px 20px 50px; */
+    background-color: rgba(97, 200, 241, 0.267);
+    border-radius: 10px;
+    box-shadow:  5px 5px 20px 0 rgb(10, 10, 10);
+    
+ 
+
+}
+.btcenter{
+    margin: 100px auto;
+    justify-content: center;
+    align-items: center; 
+    position: relative;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.size2{
+   
+    justify-content: center;
+    align-items: center; 
+    position: relative;
+  
+}
+
+.bts{
+    padding-bottom: 50px;
+    font-size: 28px;
+    text-align: center;
+    width: 20%;
+    height: 5px;
+    background-color: rgb(255, 255, 255);
+    text-emphasis-color: rgb(255, 255, 255) ;
+}

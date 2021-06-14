@@ -1,10 +1,10 @@
 const router = require('express').Router();
-let Digital = require('../models/digital.models');
+let Offset = require('../models/offset.models');
 
 
 router.route('/').get((req, res) => {
-    Digital.find()
-      .then(digital => res.json(digital))
+    Offset.find()
+      .then(offset => res.json(offset))
       .catch(err => res.status(400).json('Error: ' + err));
   });
 
@@ -15,22 +15,22 @@ router.route('/').get((req, res) => {
     const Imguri = req.body.Imguri;
     
 
-    const newDigital = new Digital({
+    const newOffset = new Offset({
       Productcode,
       Description,
       Price,
       Imguri,
     });
   
-    newDigital.save()
+    newOffset.save()
     .then(() => res.json('form added!'))
     .catch(err => res.status(400).json('Error: ' + err));
   });
 
 
   router.route('/:id').get((req, res) => {
-  Digital.findById(req.params.id)
-    .then(digital => res.json(digital))
+  Offset.findById(req.params.id)
+    .then(offset => res.json(offset))
     .catch(err => res.status(400).json('Error: ' + err));
 });
   
