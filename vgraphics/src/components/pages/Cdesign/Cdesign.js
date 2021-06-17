@@ -6,9 +6,10 @@ import './Cdesign.css'
 const FormPage = () => {
 return (
     <div>
-<MDBContainer className="size">
+      {/* <img className="img11" src="./img/for you.jpg"></img> */}
+    <div className="size">
      <div>
-  <MDBRow>
+  <div>
      {/* <MDBCol md="10"> */}
        <form className="btcenter"> 
         <p className="h4 text-center mb-4">For your design</p>
@@ -18,7 +19,7 @@ return (
         <input type="text" id="defaultFormContactNameEx" className="form-control" />
         <br />
         <label htmlFor="defaultFormContactEmailEx" className="grey-text">
-          Your email
+          hdhd
         </label>
         <input type="email" id="defaultFormContactEmailEx" className="form-control" />
         <br />
@@ -43,9 +44,9 @@ return (
             
             {/* </MDBCol>
          */}
-          </MDBRow>
+          </div>
         </div> 
-        </MDBContainer>
+        </div>
          </div>
       );
     };
