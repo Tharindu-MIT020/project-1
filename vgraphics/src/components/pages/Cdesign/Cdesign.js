@@ -1,33 +1,48 @@
 import React from "react";
-import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon } from 'mdbreact';
+import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon, } from 'mdbreact';
 import './Cdesign.css'
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Form } from 'react-bootstrap';
 
 
 const FormPage = () => {
 return (
+  
     <div>
-      {/* <img className="img11" src="./img/for you.jpg"></img> */}
+      <img className="img11" src="./img/bc-2.jpeg"></img>
+      
     <div className="size">
      <div>
   <div>
      {/* <MDBCol md="10"> */}
        <form className="btcenter"> 
-        <p className="h4 text-center mb-4">For your design</p>
+        <p className="text-center">FOR YOUR DESIGN</p>
         <label htmlFor="defaultFormContactNameEx" className="grey-text">
           Your name
         </label>
         <input type="text" id="defaultFormContactNameEx" className="form-control" />
         <br />
         <label htmlFor="defaultFormContactEmailEx" className="grey-text">
-          hdhd
+         Design type
         </label>
-        <input type="email" id="defaultFormContactEmailEx" className="form-control" />
+        <br />
+            <select class="browser-default-custom-select">
+              <option selected>Open this select menu</option>
+              <option value="1">Digital</option>
+              <option value="2">Offset</option>
+              <option value="3">V-Card</option>
+              <option value="4">Other</option>
+            </select>
         <br />
         <label htmlFor="defaultFormContactSubjectEx" className="grey-text">
           Subject
         </label>
-        <input type="text" id="defaultFormContactSubjectEx" className="form-control" />
         <br />
+
+      
+           <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" />
+         <br />
+         <br />
         <label htmlFor="defaultFormContactMessageEx" className="grey-text">
           Your message
         </label>
@@ -41,9 +56,9 @@ return (
                 </div>
                
               </form>
+
             
-            {/* </MDBCol>
-         */}
+           
           </div>
         </div> 
         </div>
