@@ -44,7 +44,7 @@ function Home(){
         </div>
         </Link>
 
-        <Link to="/yourdesign">
+        <Link to="/cdesign">
         <div className="point">
             <img className="image_size" src="img/digital.png"></img>
             <label className="lab">Your Design</label>

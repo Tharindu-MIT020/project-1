@@ -1,10 +1,10 @@
-import "./view.css";
+import "./vcardview.css";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 // Actions
-import { getProductDetails } from "../../../redux/actions/DigitalAction";
-import { addToCart } from "../../../redux/actions/cartActionDigital";
+import { getProductDetails } from "../../../redux/actions/VcardAction";
+import { addToCart } from "../../../redux/actions/cartActionVcard";
 
 
 const ProductScreen = ({ match, history }) => {

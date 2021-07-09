@@ -49,9 +49,10 @@
   padding: 10px 17px;
 }
 
-.cartitem__deleteBtn {
-    /* width: 10px; */
-  padding: 10px 17px;
+.cartItem__deleteBtn {
+    width: 10px;
+    height: 10px;
+  padding: 20px 17px;
   color: red;
   background: #f4f4f4;
   border: 1px solid #171717;
@@ -59,11 +60,11 @@
   transition: all 0.3s ease-out;
 }
 
-.cartitem__deleteBtn:hover,
-.cartitem__deleteBtn:active,
-.ccartitem__deleteBtn:focus {
+.cartItem__deleteBtn:hover,
+.carItem__deleteBtn:active,
+.carItem__deleteBtn:focus {
   background: #171717;
-  transform: scale(0.8);
+  transform: scale(1.2);
 }
 
 @media (max-width: 700px) {

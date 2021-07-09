@@ -16,6 +16,7 @@
 }
 
 .cartscreen__right {
+  margin-top: 5%;
   flex: 0.3;
   background: #fff;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
@@ -25,6 +26,10 @@
 .cartscreen__right div {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   padding: 1rem;
+}
+
+.cartscreen__info{
+  text-align: center;
 }
 
 .cartscreen__info p {

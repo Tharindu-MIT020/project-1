@@ -1,10 +1,10 @@
-import "./view.css";
+import "./Offstview.css";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 // Actions
-import { getProductDetails } from "../../../redux/actions/DigitalAction";
-import { addToCart } from "../../../redux/actions/cartActionDigital";
+import { getProductDetails } from "../../../redux/actions/OffsetAction";
+import { addToCart } from "../../../redux/actions/cartActionOffset";
 
 
 const ProductScreen = ({ match, history }) => {

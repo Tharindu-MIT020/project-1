@@ -18,7 +18,7 @@ export default class Navbar extends Component {
             <li><a href="#">Contact Us</a></li>
             <li><Link to="/digital">Digital</Link></li>
             <li><Link to="/vcard">V-Card</Link></li>
-            <li><a href="#">Offset</a></li>
+            <li><Link to="/offset">Offset</Link></li>
             <li><Link to="/prices">Price List</Link></li>
         </ul>
               <ul className="navbar__links">

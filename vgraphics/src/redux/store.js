@@ -7,12 +7,25 @@ import { cartReducer } from "./reducers/cartReducers";
 import {
   getProductsReducer,
   getProductDetailsReducer,
-} from "./reducers/productReducers";
+} from "./reducers/DigitalReducers";
+import {
+  getProductsReducer1,
+  getProductDetailsReducer1,
+} from "./reducers/OffsetReducers";
+import {
+  getProductsReducer2,
+  getProductDetailsReducer2,
+} from "./reducers/VcardReducers";
+
 
 const reducer = combineReducers({
   cart: cartReducer,
   getProducts: getProductsReducer,
+  getProducts: getProductsReducer1,
+  getProducts: getProductsReducer2,
   getProductDetails: getProductDetailsReducer,
+  getProductDetails: getProductDetailsReducer1,
+  getProductDetails: getProductDetailsReducer2,
 });
 
 const middleware = [thunk];

@@ -1,10 +1,10 @@
-import "./digital.css";
+import "./Offsetland.css";
 import React, { useEffect, useState } from 'react';
-import Product from "./comp/product";
+import Product from "./comp/Offset";
 import { useDispatch, useSelector } from "react-redux";
 
 //Actions
-import { getProducts as listProducts } from "../../../redux/actions/DigitalAction";
+import { getProducts as listProducts } from "../../../redux/actions/OffsetAction";
 
 const HomeScreen = () => {
   const dispatch = useDispatch();

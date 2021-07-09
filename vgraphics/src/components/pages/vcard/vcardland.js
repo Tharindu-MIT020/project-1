@@ -1,10 +1,10 @@
-import "./digital.css";
+import "./vcardland.css";
 import React, { useEffect, useState } from 'react';
-import Product from "./comp/product";
+import Product from "./comp/vcard";
 import { useDispatch, useSelector } from "react-redux";
 
 //Actions
-import { getProducts as listProducts } from "../../../redux/actions/DigitalAction";
+import { getProducts as listProducts } from "../../../redux/actions/VcardAction";
 
 const HomeScreen = () => {
   const dispatch = useDispatch();

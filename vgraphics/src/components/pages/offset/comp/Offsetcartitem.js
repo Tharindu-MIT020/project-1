@@ -1,4 +1,4 @@
-import "./cartitem.css";
+import "./Offsetcartitem.css";
 import {Link} from 'react-router-dom';
 
 
@@ -12,7 +12,7 @@ const CartItem = ({ item, qtyChangeHandler, removeHandler }) => {
            <Link to={`/digital/${item.product}`} className="cartItem__name">
         <p>{item.name}</p>
       </Link>
-            <p className="cartitem__price">Rs.{item.price}</p>
+            <p className="cartitem__price">${item.price}</p>
             <p>Discription - {item.dis}</p>
             <p>File - {item.fil} </p>
       <select
