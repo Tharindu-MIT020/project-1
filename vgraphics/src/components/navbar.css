@@ -41,7 +41,7 @@
 
 .cart__link {
  
-  padding: 20px;
+  /* padding: 20px; */
   width: 30px;
   border-radius: 5px;
 }
@@ -82,6 +82,11 @@
 }
 .navimg{
   width: 150px;
+}
+
+.re_li{
+  padding: 0px;
+  margin: 5px;
 }
 
 

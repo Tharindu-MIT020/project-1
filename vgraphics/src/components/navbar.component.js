@@ -10,7 +10,7 @@ export default class Navbar extends Component {
       <nav className="navbar navbar-dark bg-dark navbar-expand-lg flex-column flex-md-row bd-navbar">
        
         <div className="navbar">
-           
+         
         <ul>
             <li><img className="navimg" src='img/white.png' alt='logo' /></li>
             <li><Link to="/">Home</Link></li>
@@ -21,16 +21,11 @@ export default class Navbar extends Component {
             <li><Link to="/offset">Offset</Link></li>
             <li><Link to="/prices">Price List</Link></li>
         </ul>
-              <ul className="navbar__links">
-        <li>
-          <Link to="/cart" className="cart__link">
-            {/* <i className="fas fa-shopping-cart"></i> */}
-            <span>
-              Cart 
-             </span>
-          </Link>
-        </li>
-        </ul>
+        <ul>
+        <li className ="re_li"><Link to="/cart" className="cart__link">Cart</Link></li>
+        <li className ="re_li"><Link to="/login" className="cart__link">Login </Link> </li> 
+        <li className ="re_li"><Link to="/register" className="cart__link">Register</Link> </li> 
+       </ul>
     </div>
       </nav>
     );
