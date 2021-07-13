@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const useLog = (callback, validate) => {
   const [values, setValues] = useState({
@@ -33,26 +34,32 @@ const useLog = (callback, validate) => {
     // }
      setIsSubmitting(true);
 
-    // const form = {
-    //   name: values.name,
-    //   address: values.address,
-    //   tel: values.tel,
-    //   username: values.username,
-    //   email: values.email,
-    //   password: values.password
-    // }
+    const form = {
+      username: values.username,
+     
+      password: values.password
+    }
     
-    // axios.post('http://localhost:8080/form/add',form )
-    // .then((res) => {
+    axios.post('http://localhost:8080/form/login',form )
+    .then((res) => {
+      localStorage.setItem("token", res.data.jwt);
+     
+      console.log(res.data)
       
-    //   console.log(res.data)
-      
-    //   if(res.data.warn){
-    //     alert (res.data.warn)
-    //   }
+      if(res.data.warn){
+        toast (res.data.warn)
+      }
+      else if(res.data.msg){
+        toast (res.data.msg)
+        window.location='/';
+      } 
+
       
     
-    // });
+    })
+    .catch ((e)=>{
+      console.log(e)
+    })
     
   };
 

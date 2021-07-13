@@ -71,7 +71,7 @@ code {
 
   
 
-span{
+/* span{
   background: #009688;
   height: 100%;
   width: 0;
@@ -82,7 +82,7 @@ span{
   z-index: -1;
   transition: 0.5s;
   
-}
+} */
 button:hover span{
   width: 100%;
 }

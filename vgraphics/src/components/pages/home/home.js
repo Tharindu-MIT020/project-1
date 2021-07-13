@@ -3,6 +3,7 @@ import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "../../button.component";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from 'mdbreact';
+import {Carousel} from 'react-bootstrap';
 import './home.css';
 
 import { BrowserRouter as Router, Route} from "react-router-dom";
@@ -13,14 +14,52 @@ function Home(){
     return(
 
    <div>
-    <div className="banner">
+     <div>
+            <Carousel fade>
+                <Carousel.Item className="banner2">
+                    <img
+                    className="img05"
+                    src="img/bground.jpg"
+                    alt="First slide"
+                    />
+                    <Carousel.Caption>
+                    <h3>First slide label</h3>
+                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    </Carousel.Caption>
+                 </Carousel.Item> 
+                   <Carousel.Item className="banner2">
+                    <img
+                    className="img05"
+                    src="img/for you.jpg"
+                    alt="First slide"
+                    />
+                    <Carousel.Caption>
+                    <h3>First slide label</h3>
+                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    </Carousel.Caption>
+                 </Carousel.Item> 
+                  <Carousel.Item className="banner2">
+                    <img
+                    className="img05"
+                    src="img/bc-2.jpeg"
+                    alt="First slide"
+                    />
+                     <Carousel.Caption>
+                    <h3>First slide label</h3>
+                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    </Carousel.Caption>
+                 </Carousel.Item>  
+                
+                            
+                     
+            </Carousel>
         
-        <div style = {{paddingTop: "22%"}}>
+        {/* <div style = {{paddingTop: "22%"}}>
         <div >
         <Link to="/register"> <button className="home-input-btn">Register</button></Link>
         <Link to="/login"><button className="home-input-btn2">login</button></Link>
         </div>
-        </div>
+        </div> */}
     </div>
     <div className="home_bt">
         <Link to="/digital">

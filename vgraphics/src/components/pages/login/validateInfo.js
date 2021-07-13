@@ -13,20 +13,12 @@ export default function validateInfo(values) {
     if (!values.username.trim()) {
       errors.username = 'Username required';
     }
-    else if(values.username != "tharindu"){
-       toast("Username invalide") 
-    }
+    
 
     if (!values.password) {
       errors.password = 'Password is required';
-    } else if (values.password=="12345678"){
-        toast("login success")
+    }
         
-        }
-        else{
-          toast("Password invalide")
-          
-        }
   
     
     return errors;
