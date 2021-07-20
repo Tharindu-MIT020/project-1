@@ -17,6 +17,7 @@ router.route('/').get((req, res) => {
     const tel = req.body.tel;
     const username = req.body.username;
     const email = req.body.email;
+    const type = req.body.type;
     const password = req.body.password;
 
     let exist = await Form.findOne({ username: username })
@@ -41,6 +42,7 @@ router.route('/').get((req, res) => {
       tel,
       username,
       email,
+      type,
       password,
     });
 
@@ -59,14 +61,14 @@ router.route('/').get((req, res) => {
 
     //Check Current Users
     let user = await Form.findOne({ username: req.body.username});
-    if(!user) return res.status(200).json({ warn: "Invalid Email" })
+    if(!user) return res.status(200).json({ warn: "Invalid Username" })
 
     //check password
     const validPassword = await bcrypt.compare(req.body.password, user.password)
-    if(!validPassword) res.status(400).json({ warn: 'Invalid Password'})
+    if(!validPassword) res.status(200).json({ warn: "Invalid Password"})
 
     //Set Token
-    const token = jwt.sign({_id : user._id, username: user.username },  process.env.jwtKey)
+    const token = jwt.sign({_id : user._id, username: user.username ,type: user.type },  process.env.jwtKey)
 
     //Response
     res.status(200)

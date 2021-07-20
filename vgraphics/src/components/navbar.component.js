@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon, } from 'mdbreact';
-import { Dropdown, ButtonGroup, Button, DropdownButton } from 'react-bootstrap';
-import jwtDecode from "jwt-decode";
+import { Dropdown, ButtonGroup, DropdownButton } from 'react-bootstrap';
+
 
 
 import "./navbar.css";
 import { useSelector } from "react-redux";
 
  const jwt = localStorage.getItem("token");
+
 
  function logout(){
    localStorage.clear()
@@ -41,9 +41,10 @@ export default class Navbar extends Component {
           {jwt?
             (
               <>
+             
             <li className ="re_li"><Link to="/cart" className="cart__link">Cart</Link></li>
-            <DropdownButton as={ButtonGroup} title="user" id="bg-vertical-dropdown-1">
-              <Dropdown.Item eventKey="1">Edit</Dropdown.Item>
+             <DropdownButton as={ButtonGroup} title="user" id="bg-vertical-dropdown-1">
+             <Dropdown.Item eventKey="1">Edit</Dropdown.Item>
              <Dropdown.Item eventKey="2">Notification</Dropdown.Item>
               <Dropdown.Item eventKey="3" onClick={logout}>Log out</Dropdown.Item>
              </DropdownButton>

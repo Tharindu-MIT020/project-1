@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './login.css';
-import Logisus from './logsuccess';
+
 import Logincon from './logincon'
 
 
@@ -20,11 +20,12 @@ const Login = () => {
         <div className='login-content-left'>
         <img className='login-img' src='img/login.jpg' alt='spaceship' />
         </div>
-        {!isSubmitted ? (
+        <Logincon />
+        {/* {!isSubmitted ? (
           <Logincon submitLogin={submitLogin} />
         ) : (
           <Logisus />
-        )}
+        )} */}
         </div>
         </div>
         

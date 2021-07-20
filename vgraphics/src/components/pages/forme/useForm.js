@@ -47,6 +47,7 @@ const useForm = (callback, validate) => {
       tel: values.tel,
       username: values.username,
       email: values.email,
+      type:"user",
       password: values.password
     }
     

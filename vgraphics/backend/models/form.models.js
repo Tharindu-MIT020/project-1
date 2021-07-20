@@ -32,6 +32,12 @@ const formSchema = new Schema({
         
     },
 
+     type:{
+        type: String,
+       
+        
+    },
+
     password:{
         type: String,
         required: true,

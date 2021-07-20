@@ -1,12 +1,9 @@
 
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-import Button from "../../button.component";
-import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from 'mdbreact';
 import {Carousel} from 'react-bootstrap';
 import './home.css';
 
-import { BrowserRouter as Router, Route} from "react-router-dom";
 import { Link } from 'react-router-dom';
 
 

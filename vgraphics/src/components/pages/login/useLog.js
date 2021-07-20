@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import jwtDecode from "jwt-decode";
 
 const useLog = (callback, validate) => {
   const [values, setValues] = useState({
@@ -50,8 +51,20 @@ const useLog = (callback, validate) => {
         toast (res.data.warn)
       }
       else if(res.data.msg){
-        toast (res.data.msg)
-        window.location='/';
+                  const jwt = localStorage.getItem("token");
+                  let type = jwtDecode(jwt).type;
+                  if(type === "user"){
+                      toast (res.data.msg)
+                      //history.push("/");
+                      window.location = "/";
+                  }
+                  else if(type === "admin"){
+                      toast (res.data.msg)
+                      //history.push("/owner-main-page");
+                      window.location = "/admin";
+                  }
+        // toast (res.data.msg)
+        // window.location='/';
       } 
 
       
@@ -63,14 +76,14 @@ const useLog = (callback, validate) => {
     
   };
 
-  useEffect(
-    () => {
-      if (Object.keys(errors).length === 0 && isSubmitting) {
-      callback();
-      }
-    },
-    [errors]
-  );
+  // useEffect(
+  //   () => {
+  //     if (Object.keys(errors).length === 0 && isSubmitting) {
+  //     callback();
+  //     }
+  //   },
+  //   [errors]
+  // );
 
   return { handleChange, handleSubmit, values, errors };
 };
