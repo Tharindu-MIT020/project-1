@@ -18,7 +18,7 @@ import View2 from "./components/pages/vcard/vcardview"
 import OffsetView from "./components/pages/offset/Offstview"
 import Cdesign from "./components/pages/Cdesign/Cdesign"
 import Makepayment from "./components/pages/purchase/checkout"
-import Admin from "./components/pages/Admin/adminview"
+import Admin from "./components/pages/Admin/AdminView1"
 import Adddigital from "./components/pages/Admin/addDesing/Adddigital"
 
 

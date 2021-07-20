@@ -1,0 +1,26 @@
+.main_part{
+    display: grid;
+    grid-template-columns: 200px auto;
+}
+.side_nav{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(88, 117, 243);
+    width: 200px;
+    height: 100%;
+}
+.contain{
+    display: flex;
+    flex-direction: column;
+}
+.sideviwe ul li{
+  list-style: none;
+  display: inline-block;
+  margin: 10px 20px;
+  position: relative;
+}
+.sideviwe ul li a{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+}

@@ -43,7 +43,7 @@ export default class Navbar extends Component {
               <>
              
             <li className ="re_li"><Link to="/cart" className="cart__link">Cart</Link></li>
-             <DropdownButton as={ButtonGroup} title="user" id="bg-vertical-dropdown-1">
+             <DropdownButton variant="outline-primary" as={ButtonGroup} title="user" id="bg-vertical-dropdown-1">
              <Dropdown.Item eventKey="1">Edit</Dropdown.Item>
              <Dropdown.Item eventKey="2">Notification</Dropdown.Item>
               <Dropdown.Item eventKey="3" onClick={logout}>Log out</Dropdown.Item>
