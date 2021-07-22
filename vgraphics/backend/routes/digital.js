@@ -13,6 +13,14 @@ router.route('/').get((req, res) => {
     const Description = req.body.Description;
     const Price = req.body.Price;
     const Imguri = req.body.Imguri;
+
+  let exist = await Digital.findOne({ Productcode: Productcode })
+   
+  if (exist) {
+  
+    return res.status(200).json({ warn: "Productcode used" })
+  }
+
     
 
     const newDigital = new Digital({
@@ -23,9 +31,16 @@ router.route('/').get((req, res) => {
     });
   
     newDigital.save()
-    .then(() => res.json('form added!'))
+    .then(() => res.json({warns :'form added!'}))
     .catch(err => res.status(400).json('Error: ' + err));
   });
+
+
+  router.route('/:id').delete((req, res) => {
+  Digital.findByIdAndDelete(req.params.id)
+    .then(() => res.json('Design deleted.'))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
 
 
   router.route('/:id').get((req, res) => {

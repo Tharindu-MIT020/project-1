@@ -19,7 +19,7 @@ import OffsetView from "./components/pages/offset/Offstview"
 import Cdesign from "./components/pages/Cdesign/Cdesign"
 import Makepayment from "./components/pages/purchase/checkout"
 import Admin from "./components/pages/Admin/AdminView1"
-import Adddigital from "./components/pages/Admin/addDesing/Adddigital"
+
 
 
 
@@ -31,7 +31,6 @@ function App() {
      <Navbar />
           <Switch>
           <Route path="/admin" component={Admin} />
-          <Route path="/adddigital" component={Adddigital} />
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
           <Route path="/prices" component={Prices} />

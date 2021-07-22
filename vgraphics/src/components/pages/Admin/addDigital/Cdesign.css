@@ -12,9 +12,11 @@
     background-color: rgba(0, 0, 0, 0.555);
     border-radius: 10px;
     box-shadow:  5px 5px 20px 0 rgb(10, 10, 10);
-    
  
-
+}
+.mod1{
+   background-color: rgba(0, 0, 0, 0.555);
+   width: 1000px;
 }
 .btcenter{
     margin: 100px auto;
@@ -23,7 +25,7 @@
     position: relative;
     padding-left: 100px;
     padding-right: 100px;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-weight: bold;
     font-size: 19px;
 }

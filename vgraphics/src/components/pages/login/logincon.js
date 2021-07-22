@@ -5,7 +5,7 @@ import Validate from './validateInfo'
 
 import { Link } from 'react-router-dom';
 
-const Logincon = ({submitLogin}) => {
+const Logincon = (submitLogin) => {
   const{handleChange,handleSubmit, values, errors} = useLog(
     submitLogin,
     Validate
