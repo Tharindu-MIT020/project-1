@@ -9,13 +9,11 @@ import "./navbar.css";
 import { useSelector } from "react-redux";
 
  const jwt = localStorage.getItem("token");
+//  let type = jwtDecode(jwt).type;
+let type
  
- const decode = (awt) => {
-   let type = jwtDecode(jwt).type;
-   const decode = (type === "user")
-   
-  
- }
+ 
+
 
 
 
@@ -49,16 +47,34 @@ export default class Navbar extends Component {
         <ul>
           
           {jwt?
+            
             (
-              <>
+              type = jwtDecode(jwt).type,
+              type === "user"?
+              
+              (
+                <>
              
-              <li className ="re_li"><Link to="/cart" className="cart__link">Cart</Link></li>
-             <DropdownButton variant="outline-primary" as={ButtonGroup} title="user" id="bg-vertical-dropdown-1">
-             <Dropdown.Item eventKey="1">Edit</Dropdown.Item>
-             <Dropdown.Item eventKey="2">Notification</Dropdown.Item>
-              <Dropdown.Item eventKey="3" onClick={logout}>Log out</Dropdown.Item>
-             </DropdownButton>
-             </>
+                  <li className ="re_li"><Link to="/cart" className="cart__link">Cart</Link></li>
+                <DropdownButton variant="outline-primary" as={ButtonGroup} title="user" id="bg-vertical-dropdown-1">
+                <Dropdown.Item eventKey="1">Edit</Dropdown.Item>
+                <Dropdown.Item eventKey="2">Notification</Dropdown.Item>
+                  <Dropdown.Item eventKey="3" onClick={logout}>Log out</Dropdown.Item>
+                </DropdownButton>
+                </>
+
+              ):(
+                <>
+                <li className ="re_li"><Link to="/admin" className="cart__link">Admin Dashbord</Link></li>
+                 <DropdownButton variant="outline-primary" as={ButtonGroup} title="user" id="bg-vertical-dropdown-1">
+                <Dropdown.Item eventKey="1">Edit</Dropdown.Item>
+                <Dropdown.Item eventKey="2">Notification</Dropdown.Item>
+                  <Dropdown.Item eventKey="3" onClick={logout}>Log out</Dropdown.Item>
+                </DropdownButton>
+                </>
+              )
+              
+              
              ):
              (
               <>

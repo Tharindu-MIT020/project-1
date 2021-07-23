@@ -5,19 +5,19 @@ import { toast } from 'react-toastify';
 
 
 
-const Digitals = (props) => (
+const Prices = (props) => (
 
   
   <tr>
-    <td>{props.digital.Productcode}</td>
-    <td>{props.digital.Description}</td>
-    <td>{props.digital.Price}</td>
-    <td>{props.digital.Imguri}</td>
-    <td><Button variant="danger" href="#" onClick={() => { props.deleteDigital(props.digital._id) }}>Delete</Button></td>
+    <td>{props.price.material}</td>
+    <td>{props.price.size}</td>
+    <td>{props.price.quality}</td>
+    <td>{props.price.price}</td>
+    <td><Button variant="danger" href="#" onClick={() => { props.deletePrice(props.price._id) }}>Delete</Button></td>
     </tr>
 )
 
-  export default class DigitalsList extends Component {
+  export default class PricesList extends Component {
 
 
 
@@ -26,30 +26,28 @@ const Digitals = (props) => (
       super(props);
       this.state={
 
-        Productcode:'',
-        Description:'',
-        Price:'',
-        Imguri:'',
-        digitals:[]
-        
+        material:'',
+        size:'',
+        quality:'',
+        prices:[]
 
 
       };
     }
   
   componentDidMount() {
-    axios.get('http://localhost:8080/digital/')
+    axios.get('http://localhost:8080/price/')
       .then(response => {
 
         console.log(response.data);
-        this.setState({ digitals: response.data })
+        this.setState({ prices: response.data })
       })
       .catch((error) => {
         console.log(error);
       })
   }
-    deleteDigital(id) {
-    axios.delete('http://localhost:8080/digital/'+id)
+    deletePrice(id) {
+    axios.delete('http://localhost:8080/price/'+id)
       .then(response => { console.log(response.data)
       if(response.data.warns){
         toast (response.data.warns,
@@ -76,14 +74,14 @@ const Digitals = (props) => (
   }
 
   
-  digitalsList() {
+  pricesList() {
 
-    return this.state.digitals.map((digital) => {
+    return this.state.prices.map((price) => {
       return (
-        <Digitals
-          digital={digital}
-          deleteDigital={this.deleteDigital}
-          key={digital._id}
+        <Prices
+          price={price}
+          deletePrice={this.deletePrice}
+          key={price._id}
         />
       );
     });
@@ -93,19 +91,19 @@ const Digitals = (props) => (
   render() {
     return (
       <div>
-        <h3>Digital List</h3>
+        <h3>Price List</h3>
         <Table striped bordered hover variant="dark" className="table">
           <thead className="thead-light">
             <tr>
-              <th>Productcode</th>
-              <th>Description</th>
-              <th>Price (Rs.)</th>
-              <th>Image URL</th>
+              <th>Material</th>
+              <th>Size</th>
+              <th>Qulaity</th>
+              <th>Price</th>
               <th>Delete</th>
               </tr>
           </thead>
           <tbody>
-            { this.digitalsList() }
+            { this.pricesList() }
           </tbody>
         </Table>
       </div>

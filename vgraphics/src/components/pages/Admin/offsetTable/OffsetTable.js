@@ -5,19 +5,19 @@ import { toast } from 'react-toastify';
 
 
 
-const Digitals = (props) => (
+const Offsets = (props) => (
 
   
   <tr>
-    <td>{props.digital.Productcode}</td>
-    <td>{props.digital.Description}</td>
-    <td>{props.digital.Price}</td>
-    <td>{props.digital.Imguri}</td>
-    <td><Button variant="danger" href="#" onClick={() => { props.deleteDigital(props.digital._id) }}>Delete</Button></td>
+    <td>{props.offset.Productcode}</td>
+    <td>{props.offset.Description}</td>
+    <td>{props.offset.Price}</td>
+    <td>{props.offset.Imguri}</td>
+    <td><Button variant="danger" href="#" onClick={() => { props.deleteOffset(props.offset._id) }}>Delete</Button></td>
     </tr>
 )
 
-  export default class DigitalsList extends Component {
+  export default class OffsetsList extends Component {
 
 
 
@@ -30,7 +30,7 @@ const Digitals = (props) => (
         Description:'',
         Price:'',
         Imguri:'',
-        digitals:[]
+        offsets:[]
         
 
 
@@ -38,18 +38,18 @@ const Digitals = (props) => (
     }
   
   componentDidMount() {
-    axios.get('http://localhost:8080/digital/')
+    axios.get('http://localhost:8080/offset/')
       .then(response => {
 
         console.log(response.data);
-        this.setState({ digitals: response.data })
+        this.setState({ offsets: response.data })
       })
       .catch((error) => {
         console.log(error);
       })
   }
-    deleteDigital(id) {
-    axios.delete('http://localhost:8080/digital/'+id)
+    deleteOffset(id) {
+    axios.delete('http://localhost:8080/offset/'+id)
       .then(response => { console.log(response.data)
       if(response.data.warns){
         toast (response.data.warns,
@@ -76,14 +76,14 @@ const Digitals = (props) => (
   }
 
   
-  digitalsList() {
+  offsetsList() {
 
-    return this.state.digitals.map((digital) => {
+    return this.state.offsets.map((offset) => {
       return (
-        <Digitals
-          digital={digital}
-          deleteDigital={this.deleteDigital}
-          key={digital._id}
+        <Offsets
+          offset={offset}
+          deleteOffset={this.deleteOffset}
+          key={offset._id}
         />
       );
     });
@@ -93,7 +93,7 @@ const Digitals = (props) => (
   render() {
     return (
       <div>
-        <h3>Digital List</h3>
+        <h3>Offset List</h3>
         <Table striped bordered hover variant="dark" className="table">
           <thead className="thead-light">
             <tr>
@@ -105,7 +105,7 @@ const Digitals = (props) => (
               </tr>
           </thead>
           <tbody>
-            { this.digitalsList() }
+            { this.offsetsList() }
           </tbody>
         </Table>
       </div>

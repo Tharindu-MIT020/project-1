@@ -22,7 +22,7 @@ const PricesSchema = new Schema({
     price:{
         type: Number,
         required: true,
-        unique: true,
+       
         
     },
 

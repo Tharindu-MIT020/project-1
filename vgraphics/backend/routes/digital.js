@@ -38,7 +38,7 @@ router.route('/').get((req, res) => {
 
   router.route('/:id').delete((req, res) => {
   Digital.findByIdAndDelete(req.params.id)
-    .then(() => res.json('Design deleted.'))
+    .then(() => res.json( {warns : 'Design deleted.'}))
     .catch(err => res.status(400).json('Error: ' + err));
 });
 

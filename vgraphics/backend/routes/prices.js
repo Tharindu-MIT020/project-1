@@ -26,8 +26,21 @@ router.route('/').get((req, res) => {
     });
   
     newPrices.save()
-    .then(() => res.json('form added!'))
+    .then(() => res.json({warn :'Price added!'}))
     .catch(err => res.status(400).json('Error: ' + err));
   });
+
+  router.route('/:id').delete((req, res) => {
+    Prices.findByIdAndDelete(req.params.id)
+    .then(() => res.json( {warns : 'Price deleted.'}))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
+
+  router.route('/:id').get((req, res) => {
+  Prices.findById(req.params.id)
+    .then(offset => res.json(offset))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
   
   module.exports = router;

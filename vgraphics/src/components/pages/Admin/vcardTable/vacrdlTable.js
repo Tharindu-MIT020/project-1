@@ -5,15 +5,15 @@ import { toast } from 'react-toastify';
 
 
 
-const Digitals = (props) => (
+const Vcards = (props) => (
 
   
   <tr>
-    <td>{props.digital.Productcode}</td>
-    <td>{props.digital.Description}</td>
-    <td>{props.digital.Price}</td>
-    <td>{props.digital.Imguri}</td>
-    <td><Button variant="danger" href="#" onClick={() => { props.deleteDigital(props.digital._id) }}>Delete</Button></td>
+    <td>{props.vcard.Productcode}</td>
+    <td>{props.vcard.Description}</td>
+    <td>{props.vcard.Price}</td>
+    <td>{props.vcard.Imguri}</td>
+    <td><Button variant="danger" href="#" onClick={() => { props.deleteVcard(props.vcard._id) }}>Delete</Button></td>
     </tr>
 )
 
@@ -30,7 +30,7 @@ const Digitals = (props) => (
         Description:'',
         Price:'',
         Imguri:'',
-        digitals:[]
+        vcards:[]
         
 
 
@@ -38,18 +38,18 @@ const Digitals = (props) => (
     }
   
   componentDidMount() {
-    axios.get('http://localhost:8080/digital/')
+    axios.get('http://localhost:8080/vcard/')
       .then(response => {
 
         console.log(response.data);
-        this.setState({ digitals: response.data })
+        this.setState({ vcards: response.data })
       })
       .catch((error) => {
         console.log(error);
       })
   }
-    deleteDigital(id) {
-    axios.delete('http://localhost:8080/digital/'+id)
+    deleteVcard(id) {
+    axios.delete('http://localhost:8080/vcard/'+id)
       .then(response => { console.log(response.data)
       if(response.data.warns){
         toast (response.data.warns,
@@ -76,14 +76,14 @@ const Digitals = (props) => (
   }
 
   
-  digitalsList() {
+  vcardsList() {
 
-    return this.state.digitals.map((digital) => {
+    return this.state.vcards.map((vcard) => {
       return (
-        <Digitals
-          digital={digital}
-          deleteDigital={this.deleteDigital}
-          key={digital._id}
+        <Vcards
+          vcard={vcard}
+          deleteVcard={this.deleteVcard}
+          key={vcard._id}
         />
       );
     });
@@ -93,7 +93,7 @@ const Digitals = (props) => (
   render() {
     return (
       <div>
-        <h3>Digital List</h3>
+        <h3>Vcard List</h3>
         <Table striped bordered hover variant="dark" className="table">
           <thead className="thead-light">
             <tr>
@@ -105,7 +105,7 @@ const Digitals = (props) => (
               </tr>
           </thead>
           <tbody>
-            { this.digitalsList() }
+            { this.vcardsList() }
           </tbody>
         </Table>
       </div>

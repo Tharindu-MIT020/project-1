@@ -84,6 +84,11 @@
     font-weight: bold;
     
 }
+
+.Button2{
+    margin-top: 10px;
+    width: 140px;
+}
 .order span{
     font-size: 50px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

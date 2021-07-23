@@ -23,9 +23,15 @@ router.route('/').get((req, res) => {
     });
   
     newVcard.save()
-    .then(() => res.json('form added!'))
+    .then(() => res.json({warn :'form added!'}))
     .catch(err => res.status(400).json('Error: ' + err));
   });
+
+    router.route('/:id').delete((req, res) => {
+    Vcard.findByIdAndDelete(req.params.id)
+    .then(() => res.json( {warns : 'Vcard deleted.'}))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
 
 
   router.route('/:id').get((req, res) => {
