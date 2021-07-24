@@ -17,12 +17,12 @@ return (
      {/* <MDBCol md="10"> */}
        <form className="btcenter"> 
         <p className="text-center">FOR YOUR DESIGN</p>
-        <label htmlFor="defaultFormContactNameEx" className="grey-text">
+        <label className="label2">
           Your name
         </label>
         <input type="text" id="defaultFormContactNameEx" className="form-control" />
         <br />
-        <label htmlFor="defaultFormContactEmailEx" className="grey-text">
+        <label htmlFor="defaultFormContactEmailEx" className="label2">
          Design type
         </label>
         <br />
@@ -34,7 +34,7 @@ return (
               <option value="4">Other</option>
             </select>
         <br />
-        <label htmlFor="defaultFormContactSubjectEx" className="grey-text">
+        <label htmlFor="defaultFormContactSubjectEx" className="label2">
           File
         </label>
         <br />
@@ -43,7 +43,7 @@ return (
            <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" />
          <br />
          <br />
-        <label htmlFor="defaultFormContactMessageEx" className="grey-text">
+        <label htmlFor="defaultFormContactMessageEx" className="label2">
           Your message
         </label>
         <textarea type="text" id="defaultFormContactMessageEx" className="form-control" rows="3" />

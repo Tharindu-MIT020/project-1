@@ -19,6 +19,9 @@ import OffsetView from "./components/pages/offset/Offstview"
 import Cdesign from "./components/pages/Cdesign/Cdesign"
 import Makepayment from "./components/pages/purchase/checkout"
 import Admin from "./components/pages/Admin/AdminView1"
+import chats from "./components/pages/Chat/chat"
+import Adminchats from "./components/pages/Admin/Chat/Adminchat"
+
 
 
 
@@ -31,6 +34,8 @@ function App() {
      <Navbar />
           <Switch>
           <Route path="/admin" component={Admin} />
+          <Route path="/chat" component={chats} />
+          <Route path="/adminchat" component={Adminchats} />
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
           <Route path="/prices" component={Prices} />

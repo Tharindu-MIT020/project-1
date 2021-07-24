@@ -15,6 +15,7 @@ import Vcardtable from "./vcardTable/vacrdlTable"
 import Pricetable from "./priceTable/priceTable"
 import Test from "./addDigital/adddigital1"
 import Addprice from "./addPricelist/addfilePrice"
+import Chats from "./Chat/Adminchat"
 
 
 function AdminView1() {
@@ -22,6 +23,7 @@ function AdminView1() {
     const [modalShow2, setModalShow2] = React.useState(false);
     const [modalShow3, setModalShow3] = React.useState(false);
     const [modalShow4, setModalShow4] = React.useState(false);
+    const [modalShow5, setModalShow5] = React.useState(false);
     
     return (
         <div className ="main_part">
@@ -30,11 +32,14 @@ function AdminView1() {
                     <ul>
                     <li><Link to="/admin">Dashbord</Link></li>
                     <li><Link to="/">Notification</Link></li>
-                    <li><Link to="/">Chat</Link></li>
                     <li><Link to="/">Order</Link></li>
                     <li><Link to="/">quotation</Link></li>
+                     <br />
+                     <Link to="/adminchat">
+                    <Button className="Button2"  variant="outline-light">Chat</Button> </Link><br />
+                     
                     
-                    <Dropdown as={ButtonGroup}>
+                    <Dropdown className="Button2"  as={ButtonGroup}>
                     <Button variant="outline-light">Add Design</Button>
 
                     <Dropdown.Toggle split variant="outline-light" id="dropdown-split-basic" />

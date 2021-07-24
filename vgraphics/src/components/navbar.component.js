@@ -55,11 +55,12 @@ export default class Navbar extends Component {
               (
                 <>
              
-                  <li className ="re_li"><Link to="/cart" className="cart__link">Cart</Link></li>
+                <li className ="re_li"><Link to="/cart" className="cart__link">Cart</Link></li>
+                <li className ="re_li"><Link to="/Chat" className="cart__link">Chat</Link></li>
                 <DropdownButton variant="outline-primary" as={ButtonGroup} title="user" id="bg-vertical-dropdown-1">
                 <Dropdown.Item eventKey="1">Edit</Dropdown.Item>
                 <Dropdown.Item eventKey="2">Notification</Dropdown.Item>
-                  <Dropdown.Item eventKey="3" onClick={logout}>Log out</Dropdown.Item>
+                <Dropdown.Item eventKey="3" onClick={logout}>Log out</Dropdown.Item>
                 </DropdownButton>
                 </>
 

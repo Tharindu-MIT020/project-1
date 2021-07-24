@@ -24,13 +24,17 @@ const priceRouter = require('./routes/prices');
 const DigitalRouter = require('./routes/digital');
 const VcardRouter = require('./routes/vcard');
 const OffsetRouter = require('./routes/offset');
+const Chat = require('./routes/chat')
+const Oder = require('./routes/order')
 
 
 app.use('/form', formRouter);
+app.use('/order', Oder);
 app.use('/price', priceRouter);
 app.use('/digital', DigitalRouter);
 app.use('/vcard', VcardRouter);
 app.use('/offset', OffsetRouter);
+app.use('/chat', Chat);
 
 
 app.listen(port, () => {
