@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const addToCart = (id, qty, fil, dis) => async (dispatch, getState) => {
   const { data } = await axios.get(`http://localhost:8080/digital/${id}`);
-
+  
   dispatch({
     type: actionTypes.ADD_TO_CART,
     payload: {
@@ -17,9 +17,11 @@ export const addToCart = (id, qty, fil, dis) => async (dispatch, getState) => {
       qty,
     },
   });
+ 
 
   localStorage.setItem("cart", JSON.stringify(getState().cart.cartItems));
 };
+
 
 export const removeFromCart = (id) => (dispatch, getState) => {
   dispatch({

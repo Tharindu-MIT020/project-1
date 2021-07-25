@@ -34,54 +34,35 @@ const useLog = (callback, validate) => {
     // }
      setIsSubmitting(true);
 
-     const variable = localStorage.getItem("cart");
-     console.log( variable[0].name)
-     let cart
-     variable.forEach(element => {
-       cart = {
-         name:element.name,
-         
+     const jwt = localStorage.getItem("token");
+     let username = jwtDecode(jwt).username;
 
-       }
-       
-     });
-
-     console.log(cart)
-    //  let productname = variable.name;
-    //  console.log(productname)
+    const chat = {
+      name:username,
+      message: values.message,
      
+    }
     
-
-
-
-    // const order = {
-    //   productname:productname,
-    //   qty: qty,
-    //   discription: discription,
-    //   price: price,
-     
-    // }
-    
-    axios.post('http://localhost:8080/order/add',  )
+    axios.post('http://localhost:8080/chat/add', chat )
         .then((res) => {
       
       console.log(res.data)
       
-      // if(res.data.warn){
-      //   toast (res.data.warn,
-      //     {
-      //       position: "top-center",
-      //       autoClose: 5000,
-      //       hideProgressBar: false,
-      //       closeOnClick: true,
-      //       pauseOnHover: true,
-      //       draggable: true,
-      //       progress: undefined,
-      //     });
-      // }else if(res.data.warns){
-      //   toast(res.data.warns);
-      //    window.location = "/chat";
-      // }
+      if(res.data.warn){
+        toast (res.data.warn,
+          {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
+      }else if(res.data.warns){
+        toast(res.data.warns);
+         
+      }
       
     
     })

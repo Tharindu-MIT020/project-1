@@ -70,7 +70,8 @@ const CartScreen = (submitLogin) => {
             <p>Rs.{getCartSubTotal().toFixed(2)}</p>
           </div>
           <div>
-            <button onClick={handleSubmit} type="submit" >Proceed To Checkout</button>
+            <Link to="makepayment">
+            <button type="submit" >Proceed To Checkout</button></Link>
           </div>
         </div>
       </div>

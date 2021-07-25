@@ -1,0 +1,105 @@
+.main_part{
+    display: grid;
+    grid-template-columns: 200px auto;
+}
+.side_nav{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(88, 117, 243);
+    width: 200px;
+    height: 100%;
+}
+.contain{
+    display: flex;
+    flex-direction: column;
+}
+.sideviwe ul li{
+  list-style: none;
+  display: inline-block;
+  margin: 10px 20px;
+  position: relative;
+}
+.sideviwe ul li a{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+}
+.main_details{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 300px;
+    justify-items: center;
+    align-items: center;
+}
+.order{
+    display: flex;
+    flex-direction: column;
+    column-gap: 20px;
+    height: 150px;
+    width: 300px;
+    background-color: blanchedalmond;
+    text-align: center;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 16Px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    text-transform: uppercase;
+    font-weight: bold;
+   
+}
+
+.Customer{
+     display: flex;
+     flex-direction: column;
+    column-gap: 20px;
+    height: 150px;
+    width: 300px;
+    background-color: rgb(60, 196, 94);
+    text-align: center;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 16Px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    text-transform: uppercase;
+    font-weight: bold;
+    
+}
+.Profit{
+    display: flex;
+    flex-direction: column;
+    column-gap: 20px;
+    height: 150px;
+    width: 300px;
+    background-color: rgb(61, 143, 238);
+    text-align: center;
+    justify-items: center;
+    justify-content: center;
+    direction: initial;
+    align-items: center;
+    font-size: 16Px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    text-transform: uppercase;
+    font-weight: bold;
+    
+}
+
+.Button2{
+    margin-top: 10px;
+    width: 140px;
+}
+.order span{
+    font-size: 50px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}.Customer span{
+    font-size: 50px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}.Profit span{
+    font-size: 40px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.odertable{
+    margin: 100px;
+}

@@ -25,16 +25,25 @@ const DigitalRouter = require('./routes/digital');
 const VcardRouter = require('./routes/vcard');
 const OffsetRouter = require('./routes/offset');
 const Chat = require('./routes/chat')
+const QChat = require('./routes/qchat')
 const Oder = require('./routes/order')
+const Cdesign = require('./routes/cdesign')
+const Makepayment = require('./routes/makepayment')
+const Proof = require('./routes/proof')
+
 
 
 app.use('/form', formRouter);
+app.use('/cdesign', Cdesign);
 app.use('/order', Oder);
 app.use('/price', priceRouter);
 app.use('/digital', DigitalRouter);
 app.use('/vcard', VcardRouter);
 app.use('/offset', OffsetRouter);
 app.use('/chat', Chat);
+app.use('/qchat', QChat);
+app.use('/makepayment', Makepayment);
+app.use('/proof', Proof);
 
 
 app.listen(port, () => {

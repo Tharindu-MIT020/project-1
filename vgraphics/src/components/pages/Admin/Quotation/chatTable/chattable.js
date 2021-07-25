@@ -5,13 +5,17 @@ import { toast } from 'react-toastify';
 
 
 
+
+
+
+
 const Chats = (props) => (
 
   
   <tr>
     <td>{props.chat.name}</td>
     <td>{props.chat.message}</td>
-    
+    <td><Button variant="danger" href="#" onClick={() => { props.deleteChat(props.chat._id) }} >Delete</Button></td>
    </tr>
 )
 
@@ -20,7 +24,6 @@ const Chats = (props) => (
     constructor(props){
       super(props);
       this.state={
-
         name:'',
         message:'',
         chats:[]
@@ -30,7 +33,7 @@ const Chats = (props) => (
     }
   
   componentDidMount() {
-    axios.get('http://localhost:8080/chat/')
+    axios.get('http://localhost:8080/qchat/')
       .then(response => {
 
         console.log(response.data);
@@ -40,15 +43,44 @@ const Chats = (props) => (
         console.log(error);
       })
   }
+  
+      deleteChat(id) {
+    axios.delete('http://localhost:8080/qchat/'+id)
+      .then(response => { console.log(response.data)
+      if(response.data.warns){
+        toast (response.data.warns,
+          {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
+          window.location = "/adminchat";
+      }
+      
+      
+      
+      
+      });
+
+    // this.setState({
+    //   digitals: this.state.digitals.filter(el => el._id !== id)
+    // })
+  }
 
 
   
   chatsList() {
+    
 
     return this.state.chats.map((chat) => {
       return (
         <Chats
           chat={chat}
+          deleteChat={this.deleteChat}
           key={chat._id}
         />
       );
@@ -56,15 +88,19 @@ const Chats = (props) => (
     
   }
 
+
   render() {
+    
     return (
       <div>
+        
         <h3>Chat</h3>
         <Table striped bordered hover variant="dark" className="table">
           <thead className="thead-light">
             <tr>
               <th>Name</th>
               <th>Message</th>
+              <th>Delete</th>
                </tr>
           </thead>
           <tbody>

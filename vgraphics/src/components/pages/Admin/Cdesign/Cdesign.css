@@ -1,12 +1,12 @@
 .size{
     
-/* display: flex; */
+/*   display: flex; */
     margin: 100px auto;
     /* justify-content: center; */
     /* align-items: center;  */
     /* position: relative;  */
     width: 1000px;
-    height: 800px;
+    height: 100%;
     margin: 50px auto;
     padding: 1ex 0 10px 0;
     background-color: rgba(0, 0, 0, 0.555);
@@ -44,7 +44,6 @@
     height: 5px;
     background-color: rgb(46, 46, 46);
     text-emphasis-color: rgb(255, 255, 255) ;
-    margin: 10px;
 }
 .full{
     width: 100%;
@@ -84,28 +83,6 @@
     /* margin-bottom: 25px; */
     align-items: center;
 }
-
-.bankdetails{
-    background-color: rgba(122, 122, 122, 0.664);
-    width: 100%;
-    border-radius: 10px;
-    justify-content: center;
-    align-items: center; 
-    position: relative;
-    /* margin-left: 250px; */
-}
-
-.btd{
-    font-size: 22px;
-    font-weight: bold;
-    color: rgb(79, 199, 255);
-}
-
-.labld{
-    padding-left: 30px;
-    padding-bottom: 10px;
-}
-.note{
-    color:red;
-    font-size: 15px;
+.label2{
+ color: white;
 }

@@ -10,35 +10,31 @@ import { Form } from 'react-bootstrap';
 const FormPage = () => {
 
     const history = useHistory()
-    const [name,setName] = useState("")
-    const [type,setType] = useState("")
-    const [discription,setDiscription] = useState("")
+    const [proofcod,setProofcod] = useState("")
     const [image,setImage] = useState("");
     const [url,setUrl] = useState("");
     
     useEffect(()=>{
        if(url){
-        fetch("http://localhost:8080/cdesign/add",{
+        fetch("http://localhost:8080/proof/add",{
             method:"post",
             headers:{
                 "Content-Type":"application/json",
                 "Authorization":"Bearer "+localStorage.getItem("jwt")
             },
             body:JSON.stringify({
-                name,
-                designtype:type,
+                proofcod,                
                 imagurl:url,
-                description:discription
+                
             })
         }).then(res=>res.json())
         .then(data=>{
-    
-           if(data.warn){
+            if(data.warn){
               toast(data.warn)
            }
            else{
                toast(data.warns)
-               history.push('/')
+               history.push('/admin')
            }
         })
         
@@ -59,7 +55,7 @@ const FormPage = () => {
        })
        .then(res=>res.json())
        .then(data=>{
-         
+          console.log(data.url)
           setUrl(data.url)
        })
        .catch(err=>{
@@ -84,29 +80,18 @@ return (
   <div>
      {/* <MDBCol md="10"> */}
        <form className="btcenter"> 
-        <p className="text-center">FOR YOUR DESIGN</p>
+        <p className="text-center">Proof</p>
         <label className="label2">
-          Your name
+          Proof cod
         </label>
         <input 
         type="text" id="defaultFormContactNameEx" 
         className="form-control"
-        value={name}
-        onChange={(e)=>setName(e.target.value)}
+        value={proofcod}
+        onChange={(e)=>setProofcod(e.target.value)}
         />
         <br />
-        <label htmlFor="defaultFormContactEmailEx" className="label2">
-         Design type
-        </label>
-        <br />
-            <input 
-            type="text" id="defaultFormContactNameEx" 
-            className="form-control"
-            value={type}
-            onChange={(e)=>setType(e.target.value)}
-        />
-        <br />
-        <label htmlFor="defaultFormContactSubjectEx" className="label2">
+          <label htmlFor="defaultFormContactSubjectEx" className="label2">
           File
         </label>
         <br />
@@ -118,20 +103,8 @@ return (
            onChange={(e)=>setImage(e.target.files[0])} 
            />
          <br />
-         <br />
+         <br />      
        
-        <label htmlFor="defaultFormContactMessageEx" className="label2">
-          Your message
-        </label>
-        <textarea 
-        type="text" 
-        id="defaultFormContactMessageEx" 
-        className="form-control" 
-        rows="3"          
-        value={discription}
-        onChange={(e)=>setDiscription(e.target.value)}
-        />
-      
         <div className="text-center mt-4">
                   <MDBBtn className="bts" color="warning" onClick={()=>postDetails()}>
                     Send

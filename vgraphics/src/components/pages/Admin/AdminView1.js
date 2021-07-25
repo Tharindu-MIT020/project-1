@@ -31,11 +31,15 @@ function AdminView1() {
                 <div className = "sideviwe">
                     <ul>
                     <li><Link to="/admin">Dashbord</Link></li>
-                    <li><Link to="/">Notification</Link></li>
-                    <li><Link to="/">Order</Link></li>
-                    <li><Link to="/">quotation</Link></li>
+                    <Link to="/adminproof">
+                    <Button className="Button2"  variant="outline-light">Proof Upload</Button> </Link><br />
+                    <Link to="/adminpaymet">
+                    <Button className="Button2"  variant="outline-light">Payment</Button> </Link><br />
+                    <Link to="/admincdesign">
+                    <Button className="Button2"  variant="outline-light">Quotation</Button> </Link>
+                    
                      <br />
-                     <Link to="/adminchat">
+                    <Link to="/adminchat">
                     <Button className="Button2"  variant="outline-light">Chat</Button> </Link><br />
                      
                     

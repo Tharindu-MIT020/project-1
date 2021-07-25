@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Button, Table } from 'react-bootstrap';
 import { toast } from 'react-toastify';
+import "./qut.css"
+
+
+
+
 
 
 
@@ -10,8 +15,10 @@ const Chats = (props) => (
   
   <tr>
     <td>{props.chat.name}</td>
-    <td>{props.chat.message}</td>
-    
+    <td>{props.chat.price}</td>
+    <td>{props.chat.method}</td>
+   <td><img className="img1" src = {props.chat.images} /></td>
+   
    </tr>
 )
 
@@ -20,9 +27,10 @@ const Chats = (props) => (
     constructor(props){
       super(props);
       this.state={
-
         name:'',
-        message:'',
+        price:'',
+        method:'',
+        images:'',
         chats:[]
 
 
@@ -30,7 +38,7 @@ const Chats = (props) => (
     }
   
   componentDidMount() {
-    axios.get('http://localhost:8080/chat/')
+    axios.get('http://localhost:8080/makepayment/')
       .then(response => {
 
         console.log(response.data);
@@ -40,15 +48,44 @@ const Chats = (props) => (
         console.log(error);
       })
   }
+  
+      deleteChat(id) {
+    axios.delete('http://localhost:8080/makepayment/'+id)
+      .then(response => { console.log(response.data)
+      if(response.data.warns){
+        toast (response.data.warns,
+          {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
+          window.location = "/adminchat";
+      }
+      
+      
+      
+      
+      });
+
+    // this.setState({
+    //   digitals: this.state.digitals.filter(el => el._id !== id)
+    // })
+  }
 
 
   
   chatsList() {
+    
 
     return this.state.chats.map((chat) => {
       return (
         <Chats
           chat={chat}
+          deleteChat={this.deleteChat}
           key={chat._id}
         />
       );
@@ -56,15 +93,20 @@ const Chats = (props) => (
     
   }
 
+
   render() {
+    
     return (
       <div>
-        <h3>Chat</h3>
+        
+        <h3>Payment</h3>
         <Table striped bordered hover variant="dark" className="table">
           <thead className="thead-light">
             <tr>
               <th>Name</th>
-              <th>Message</th>
+              <th>Price</th>
+              <th>method</th>
+              <th>image</th>
                </tr>
           </thead>
           <tbody>

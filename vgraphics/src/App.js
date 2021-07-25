@@ -21,6 +21,12 @@ import Makepayment from "./components/pages/purchase/checkout"
 import Admin from "./components/pages/Admin/AdminView1"
 import chats from "./components/pages/Chat/chat"
 import Adminchats from "./components/pages/Admin/Chat/Adminchat"
+import Admincdesign from "./components/pages/Admin/Quotation/Admincdesign"
+import Cdesigndetails from "./components/pages/Quotation/cdesign"
+import Adminpaymet from "./components/pages/Admin/payment/adminpayment"
+import Adminproof from "./components/pages/Admin/Cdesign/Cdesign"
+import Proofread from "./components/pages/proofread/cdesign"
+
 
 
 
@@ -36,6 +42,11 @@ function App() {
           <Route path="/admin" component={Admin} />
           <Route path="/chat" component={chats} />
           <Route path="/adminchat" component={Adminchats} />
+          <Route path="/proofread" component={Proofread} />
+          <Route path="/admincdesign" component={Admincdesign} />
+          <Route path="/adminproof" component={Adminproof} />
+          <Route path="/adminpaymet" component={Adminpaymet} />
+          <Route path="/cdesingdetails" component={Cdesigndetails} />
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
           <Route path="/prices" component={Prices} />

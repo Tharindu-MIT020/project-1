@@ -14,7 +14,9 @@ let type
  
  
 
-
+function link() {
+ <Link to="/admincdesign"></Link>
+}
 
 
  function logout(){
@@ -58,8 +60,12 @@ export default class Navbar extends Component {
                 <li className ="re_li"><Link to="/cart" className="cart__link">Cart</Link></li>
                 <li className ="re_li"><Link to="/Chat" className="cart__link">Chat</Link></li>
                 <DropdownButton variant="outline-primary" as={ButtonGroup} title="user" id="bg-vertical-dropdown-1">
-                <Dropdown.Item eventKey="1">Edit</Dropdown.Item>
-                <Dropdown.Item eventKey="2">Notification</Dropdown.Item>
+                  <Link to="/makepayment">
+                 <Dropdown.Item  as={ButtonGroup} eventKey="1">Payment</Dropdown.Item></Link>
+                 <Link to="/proofread">
+                 <Dropdown.Item  as={ButtonGroup} eventKey="1">Proofread</Dropdown.Item></Link>
+                <Link to="/cdesingdetails">
+                <Dropdown.Item eventKey="2" as={ButtonGroup} >Your Design</Dropdown.Item></Link>
                 <Dropdown.Item eventKey="3" onClick={logout}>Log out</Dropdown.Item>
                 </DropdownButton>
                 </>
@@ -67,10 +73,8 @@ export default class Navbar extends Component {
               ):(
                 <>
                 <li className ="re_li"><Link to="/admin" className="cart__link">Admin Dashbord</Link></li>
-                 <DropdownButton variant="outline-primary" as={ButtonGroup} title="user" id="bg-vertical-dropdown-1">
-                <Dropdown.Item eventKey="1">Edit</Dropdown.Item>
-                <Dropdown.Item eventKey="2">Notification</Dropdown.Item>
-                  <Dropdown.Item eventKey="3" onClick={logout}>Log out</Dropdown.Item>
+                 <DropdownButton variant="outline-primary" as={ButtonGroup} title="Admin" id="bg-vertical-dropdown-1">
+                 <Dropdown.Item eventKey="3" onClick={logout}>Log out</Dropdown.Item>
                 </DropdownButton>
                 </>
               )
