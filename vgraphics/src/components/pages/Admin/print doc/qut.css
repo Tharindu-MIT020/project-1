@@ -1,0 +1,15 @@
+.img1{
+    width: 100px;
+}
+.print{
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    margin: 50px;
+}
+h3{
+    justify-items: center;
+    align-items: center;
+    
+    text-align: center;
+}

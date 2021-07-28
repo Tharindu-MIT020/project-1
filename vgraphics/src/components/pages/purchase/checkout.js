@@ -74,11 +74,11 @@ return (
       <div>
       <img className="img11" src="./img/checkout.jpg"></img>
       
-    <div className="size">
+    <div className="size2">
      <div>
   <div>
      {/* <MDBCol md="10"> */}
-       <form className="btcenter"> 
+       <form className="btcenter2"> 
         <p className="text-center">Process To Checkout</p>
         <div className = "bankdetails">
         <p className = "btd">
@@ -94,7 +94,7 @@ return (
         {/* <input type="text" id="defaultFormContactNameEx" className="form-control" /> */}
         <br />
         <br />
-        <label htmlFor="defaultFormContactEmailEx" className="grey-text">
+        <label htmlFor="defaultFormContactEmailEx" className="lablecolor" >
          Price
         </label>
         <input 
@@ -107,7 +107,7 @@ return (
         /><br />
         <label className="note">full amount can be change</label>
         <br />
-        <label htmlFor="defaultFormContactEmailEx" className="grey-text">
+        <label htmlFor="defaultFormContactEmailEx" className="lablecolor" >
          payment method
         </label>
         <br />
@@ -120,7 +120,7 @@ return (
         
         />
         <br /><br />
-        <label htmlFor="defaultFormContactSubjectEx" className="grey-text">
+        <label htmlFor="defaultFormContactSubjectEx" className="lablecolor" >
           File
         </label>
         <br />

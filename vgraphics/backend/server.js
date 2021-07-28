@@ -30,10 +30,12 @@ const Oder = require('./routes/order')
 const Cdesign = require('./routes/cdesign')
 const Makepayment = require('./routes/makepayment')
 const Proof = require('./routes/proof')
+const Test = require('./routes/test')
 
 
 
 app.use('/form', formRouter);
+app.use('/test', Test);
 app.use('/cdesign', Cdesign);
 app.use('/order', Oder);
 app.use('/price', priceRouter);

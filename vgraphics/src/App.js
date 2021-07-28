@@ -26,6 +26,8 @@ import Cdesigndetails from "./components/pages/Quotation/cdesign"
 import Adminpaymet from "./components/pages/Admin/payment/adminpayment"
 import Adminproof from "./components/pages/Admin/Cdesign/Cdesign"
 import Proofread from "./components/pages/proofread/cdesign"
+import Adminprint from "./components/pages/Admin/print doc/adminpayment"
+// import Admincart from "./components/pages/cart/order"
 
 
 
@@ -40,8 +42,10 @@ function App() {
      <Navbar />
           <Switch>
           <Route path="/admin" component={Admin} />
+          
           <Route path="/chat" component={chats} />
           <Route path="/adminchat" component={Adminchats} />
+          <Route path="/adminprint" component={Adminprint} />
           <Route path="/proofread" component={Proofread} />
           <Route path="/admincdesign" component={Admincdesign} />
           <Route path="/adminproof" component={Adminproof} />

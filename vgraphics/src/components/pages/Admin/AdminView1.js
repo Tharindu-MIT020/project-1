@@ -30,7 +30,8 @@ function AdminView1() {
             <div className ="side_nav">
                 <div className = "sideviwe">
                     <ul>
-                    <li><Link to="/admin">Dashbord</Link></li>
+                     <Link to="/adminprint">
+                    <Button className="Button2"  variant="outline-light">Print Doc</Button> </Link><br />
                     <Link to="/adminproof">
                     <Button className="Button2"  variant="outline-light">Proof Upload</Button> </Link><br />
                     <Link to="/adminpaymet">

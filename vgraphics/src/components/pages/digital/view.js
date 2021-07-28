@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 // Actions
 import { getProductDetails } from "../../../redux/actions/DigitalAction";
-import { addToCart } from "../../../redux/actions/cartActionDigital";
+import { addToCart } from "../../../redux/actions/cartAction";
 
 
 const ProductScreen = ({ match, history }) => {
@@ -22,7 +22,7 @@ const ProductScreen = ({ match, history }) => {
     }
   }, [dispatch, match, product]);
 
-  const addToCartHandler = () => {
+const addToCartHandler = () => {
     dispatch(addToCart(product._id, qty, fil, dis));
     history.push(`/cart`);
   };

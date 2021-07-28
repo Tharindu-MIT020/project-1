@@ -32,8 +32,7 @@ const FormPage = () => {
             })
         }).then(res=>res.json())
         .then(data=>{
-    
-           if(data.warn){
+            if(data.warn){
               toast(data.warn)
            }
            else{
